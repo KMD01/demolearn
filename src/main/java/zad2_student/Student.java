@@ -1,8 +1,11 @@
-package sda;
+package zad2_student;
 
 import custom.ConsoleColors;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 @Getter
@@ -40,11 +43,19 @@ public class Student {
 
         } while (indexString.length() != 4);
 
+
+
         Gender[] genderArray = Gender.values();
         for (Gender genderValue : genderArray) {
             System.out.println(genderValue);
         }
-        ;
+
+        /*List<Gender> gender = new ArrayList<>();
+        gender.add(Gender.MAN);
+        gender.add(Gender.WOMAN);
+         for (Gender g : gender){
+            System.out.println(g);
+        }*/
 
         String genderString;
         do {
@@ -68,5 +79,15 @@ public class Student {
         System.out.println("Index number is: " + ConsoleColors.YELLOW + index + ConsoleColors.RESET);
         System.out.println("Gender is: " + ConsoleColors.GREEN + gender + ConsoleColors.RESET);
         System.out.println("==================");
+    }
+
+    @Override
+    public String toString() {
+        return "Student {" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", index=" + index +
+                ", gender=" + gender +
+                '}';
     }
 }

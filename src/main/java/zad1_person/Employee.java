@@ -1,4 +1,4 @@
-package sda;
+package zad1_person;
 
 import zad1_person.Person;
 
@@ -12,7 +12,7 @@ public class Employee extends Person {
     }
 
     public void helloEmployee(){
-        System.out.println("hej, jestem " + firstName + getLastName());
+        System.out.println("hej, jestem " + firstName + getFirstName());
     }
 
 }

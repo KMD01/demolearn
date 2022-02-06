@@ -1,6 +1,4 @@
-package sda;
-
-import java.util.Date;
+package zad1_person;
 
 public class Person {
 
@@ -13,27 +11,29 @@ public class Person {
         this.lastName=lastName;
     }
 
-    public Person(String firstName, int birthYear) {
+    public Person(String firstName,String lastName ,int birthYear) {
         this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthYear = birthYear;
     }
 
-    public void SayHello() {
+    public void SayHey() {
         System.out.println("hey, May name is :" + firstName);
     }
 
-    public void SayHelloWithAddingName(String name2) {
-        System.out.println("hey, May name is :" + name2);
+    public void SayHeyWithNewFirstName(String newFirstName) {
+        System.out.println("hey, May first name is :" + newFirstName);
     }
 
-    public void print() {
+    public void ShowActualName() {
         System.out.println("Actual name is:" + firstName);
     }
 
-    public String getLastName() {
+    public String getFirstName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 }

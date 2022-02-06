@@ -1,6 +1,6 @@
-package sda;
+package zad7_invitations_homework;
 
-import java.util.Scanner;
+import zad7_invitations_homework.InvitationType;
 
 public class Invitation {
 

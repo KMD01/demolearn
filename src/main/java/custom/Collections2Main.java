@@ -1,9 +1,8 @@
-package sda;
+package custom;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class EightMain {
+public class Collections2Main {
     public static void main(String[] args) throws Exception{
 
 

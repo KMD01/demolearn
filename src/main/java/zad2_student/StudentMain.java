@@ -1,4 +1,4 @@
-package sda;
+package zad2_student;
 
 public class StudentMain {
 

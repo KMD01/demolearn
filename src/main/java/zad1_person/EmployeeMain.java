@@ -1,7 +1,5 @@
-package sda;
+package zad1_person;
 
-
-import zad1_person.Person;
 
 public class EmployeeMain {
     public static void main(String[] args) {
@@ -14,7 +12,7 @@ public class EmployeeMain {
         Person[] person = new Person[1];
         person[0] = employee;
         for (int i = 0; i < person.length; i++) {
-            person[i].SayHello();
+            person[i].SayHey();
         }
 
 

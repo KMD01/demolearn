@@ -1,4 +1,4 @@
-package sda;
+package zad7_invitations_homework;
 
 public enum InvitationType {
     SINGLE(1),

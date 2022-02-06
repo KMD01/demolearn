@@ -1,4 +1,4 @@
-package sda;
+package custom;
 
 import java.util.*;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Eight {
+public class Collections2 {
 
     List<String> names10 = List.of("Kasia","Zosia","Asia","Bartek");
     List<String> names20 = names10.stream().sorted((s1,s2)->s1.length()-s2.length()).collect(Collectors.toList());

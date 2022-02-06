@@ -1,4 +1,4 @@
-package sda;
+package zad4_game_homework;
 
 public enum Level {
     BASIC (1),

@@ -1,9 +1,9 @@
-package sda;
+package zad0_dynamiczna_tablica;
 
 public class Array {
 
     private int[] array;
-    private int numberOfElements = 0;
+    private int numberOfElement = 0;
 
     public Array(){
         this.array = new int[10];
@@ -14,13 +14,13 @@ public class Array {
         if (!isSpace()){
             makeArrayDoubleSize();
         } else{
-            array[numberOfElements]=element;
-            numberOfElements++;
+            array[numberOfElement]=element;
+            numberOfElement++;
         }
     }
 
     private boolean isSpace(){
-        return numberOfElements<array.length;
+        return numberOfElement<array.length;
     }
 
     private void makeArrayDoubleSize(){

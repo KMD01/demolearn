@@ -1,4 +1,4 @@
-package zad1_person;
+package zad2_student;
 
 public enum Gender {
     MAN,
