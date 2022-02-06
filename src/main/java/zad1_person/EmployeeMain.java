@@ -1,6 +1,8 @@
 package sda;
 
 
+import zad1_person.Person;
+
 public class EmployeeMain {
     public static void main(String[] args) {
         //Employee employee = new Employee("Krzysztof","Dyk", 38);

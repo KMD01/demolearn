@@ -1,5 +1,7 @@
 package sda;
 
+import zad1_person.Person;
+
 public class Employee extends Person {
 
     int salary;

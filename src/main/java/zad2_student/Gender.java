@@ -1,4 +1,4 @@
-package sda;
+package zad1_person;
 
 public enum Gender {
     MAN,

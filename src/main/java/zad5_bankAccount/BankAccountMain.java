@@ -7,7 +7,7 @@ public class BankAccountMain {
         BankAccount Anna = new BankAccount(1L, 1000);
         BankAccount Kris = new BankAccount(2L, 2000);
 
-        BankAccount.makeTransfer(Anna, Kris, 500);
+        BankAccount.makeTransfer(Anna, Kris, -500);
     }
 
 

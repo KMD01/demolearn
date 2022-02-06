@@ -15,11 +15,19 @@ public class BankAccount {
         System.out.println(accountBalance);
     }
 
+    private void validateMoneyValue(int money){
+        if(money<0){
+            throw new RuntimeException("Wrong amount of money.");
+        }
+    }
+
     public void deposit(int money){
+        validateMoneyValue(money);
         accountBalance = accountBalance + money;
     }
 
     public int withdrawal(int money){
+        validateMoneyValue(money);
         if (accountBalance>money){
             accountBalance = accountBalance - money;
             return money;
