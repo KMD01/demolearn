@@ -12,6 +12,7 @@ public class Car {
     private String color;
     private int maxSpeed;
     private String brand;
+
     public Car() {
         this.color = "white";
         this.maxSpeed = 180;
