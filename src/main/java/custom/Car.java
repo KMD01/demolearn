@@ -31,6 +31,10 @@ public class Car {
         System.out.println(String.format("Car color is: %s, max speed is: %d, car brand is: %s",
                 color, maxSpeed, brand));
     }
+
+    public String getColor() {
+        return color;
+    }
 }
 
 
