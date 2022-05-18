@@ -17,28 +17,28 @@ public class Play {
         System.out.println();
         String age = scanner.nextLine();
 
-        int wordLenght = Math.max(Math.max(firstName.length(),lastName.length()),age.length());
+        int wordLength = Math.max(Math.max(firstName.length(),lastName.length()),age.length());
 
-        for(int i=0;i<(23+wordLenght);i++){
+        for(int i=0;i<(23+wordLength);i++){
             System.out.print("|");}
 
         System.out.println();
         System.out.print("| Your first name is " + firstName + "." );
-        for(int i=0;i<=(wordLenght-firstName.length()-1);i++){
+        for(int i=0;i<=(wordLength-firstName.length()-1);i++){
             System.out.print(" ");}
         System.out.println("|");
 
         System.out.print("| Your last name is " + lastName + "." );
-        for(int i=0;i<=(wordLenght-lastName.length());i++){
+        for(int i=0;i<=(wordLength-lastName.length());i++){
             System.out.print(" ");}
         System.out.println("|");
 
         System.out.print("| Your age is " + age + ".");
-        for(int i=0;i<=(6+wordLenght-age.length());i++){
+        for(int i=0;i<=(6+wordLength-age.length());i++){
             System.out.print(" ");}
         System.out.println("|");
 
-        for(int i=0;i<(23+wordLenght);i++){
+        for(int i=0;i<(23+wordLength);i++){
             System.out.print("|");}
         System.out.println(" ");
         repeat();
