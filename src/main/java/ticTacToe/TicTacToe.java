@@ -8,40 +8,42 @@ import java.util.Objects;
 
 public class TicTacToe implements ActionListener {
 
+    boolean turn = true;
+    int step = 0;
+
     JFrame jFrame;
+    JTextField jTextField_X,jTextField_Y;
     JPanel jPanel;
     JButton[] jButtons;
     JMenuBar jMenuBar;
     JMenuItem jMenuFile;
-    JMenuItem mNewGame, mExit;
-
+    JMenuItem mNewGame, mExit, mAbout;
     Font myFont = new Font("Ink free", Font.BOLD, 30);
 
     TicTacToe() {
 
         jMenuBar = new JMenuBar();
+
         jMenuFile = new JMenu("File");
         jMenuBar.add(jMenuFile);
         jMenuFile.setVisible(true);
 
         mNewGame = new JMenuItem(" New game ");
-        mExit = new JMenuItem(" Exit ");
-
         jMenuFile.add(mNewGame);
-        jMenuFile.add(mExit);
-
         mNewGame.addActionListener(this);
+
+        mAbout = new JMenuItem(" About ");
+        jMenuFile.add(mAbout);
+        mAbout.addActionListener(this);
+
+        mExit = new JMenuItem(" Exit ");
+        jMenuFile.add(mExit);
         mExit.addActionListener(this);
-
-
-
 
         jPanel = new JPanel();
         jPanel.setBounds(0, 0, 300, 300);
         jPanel.setLayout(new GridLayout(3, 3, 1, 1));
         jPanel.setBackground(Color.lightGray);
-
-
 
         jButtons = new JButton[9];
         for (int i = 0; i < 9; i++) {
@@ -64,16 +66,17 @@ public class TicTacToe implements ActionListener {
         jFrame.setVisible(true);
     }
 
-
     private void newGame(){
-
         for (int i = 0; i < 9; i++) {
+            step = 0;
             jButtons[i].setText("");
             jButtons[i].setBackground(Color.yellow);
             jButtons[i].setEnabled(true);
         }
+    }
 
-
+    private void about(){
+        JOptionPane.showMessageDialog(null,"Author: Krzysztof Dyk \nVersion: 1.0 \n\nSee you soon! ");
     }
 
     private void exit(){
@@ -82,39 +85,39 @@ public class TicTacToe implements ActionListener {
         jFrame.setVisible(false);
     }
 
-
-
-
-
-
-    boolean turn = true;
-
     @Override
     public void actionPerformed(ActionEvent e) {
-
         if (e.getSource()==mNewGame){
             newGame();
         }
-
+        if (e.getSource()==mAbout){
+            about();
+        }
         if (e.getSource()==mExit){
             exit();
         }
-
         for (int i = 0; i < 9; i++) {
             if (e.getSource() == jButtons[i] && Objects.equals(jButtons[i].getText(), "")) {
                 if (turn) {
                     jButtons[i].setText("X");
                     turn = false;
-                    check_X();
-                    check_O();
-
+                    step++;
                 } else {
                     jButtons[i].setText("O");
                     turn = true;
-                    check_X();
-                    check_O();
+                    step++;
                 }
+                check_X();
+                check_O();
+                colorGray();
+            }
+        }
+    }
 
+    private void colorGray(){
+        if(step==9){
+            for (int j = 0; j < 9; j++) {
+                jButtons[j].setBackground(Color.GRAY);
             }
         }
     }
@@ -156,7 +159,7 @@ public class TicTacToe implements ActionListener {
                 jButtons[i].setEnabled(false);
             }
         }
-        int[] column2 = {1, 4, 8};
+        int[] column2 = {1, 4, 7};
         if (jButtons[column2[0]].getText() == "X" && jButtons[column2[1]].getText() == "X" && jButtons[column2[2]].getText() == "X") {
             jButtons[column2[0]].setBackground(Color.green);
             jButtons[column2[1]].setBackground(Color.green);
@@ -230,7 +233,7 @@ public class TicTacToe implements ActionListener {
                 jButtons[i].setEnabled(false);
             }
         }
-        int[] column2 = {1, 4, 8};
+        int[] column2 = {1, 4, 7};
         if (jButtons[column2[0]].getText() == "O" && jButtons[column2[1]].getText() == "O" && jButtons[column2[2]].getText() == "O") {
             jButtons[column2[0]].setBackground(Color.green);
             jButtons[column2[1]].setBackground(Color.green);
@@ -267,7 +270,4 @@ public class TicTacToe implements ActionListener {
             }
         }
     }
-    
-    
-    
 }
