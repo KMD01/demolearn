@@ -28,15 +28,17 @@ public class StreamReview {
             System.out.println(car);
         }
     }
-    public static void sortElements(List<Integer> justList){
-        List<String> sortedCars = justList.stream().sorted((String::compareTo)).toList();
+    public static void sortElements1(){
+        List<String> namesList = List.of("Kate","Anna","Joe","Brandon");
+        List<String> sortedCars = namesList.stream().sorted((String::compareTo)).toList();
         for (String car : sortedCars) {
             System.out.println(car);
         }
     }
     
-    public void sortElements(List<Integer> justList){
-        List<String> namesB = justList.stream().sorted(Comparator.comparingInt(String::length)).toList();
+    public static void sortElements2(){
+        List<String> namesList = List.of("Kate","Anna","Joe","Brandon");
+        List<String> namesB = namesList.stream().sorted(Comparator.comparingInt(String::length)).toList();
         }
 
     public void useIntStream(){
