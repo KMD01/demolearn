@@ -1,58 +1,65 @@
 package email;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
-@Slf4j
+@Slf4j // Logs
 public class EmailService {
 
-    public void sendEmail(String recepient) throws Exception {
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(587);
-        mailSender.setUsername("mariusz.kowalski5000@gmail.com");
-        mailSender.setPassword("mariusz190460");
+    private static final String SENDER = "mariusz.kowalski5000@gmail.com";
+    private static final String SENDER_PASSWORD = "shcmhqpukutgaulz";
 
-        Properties props = mailSender.getJavaMailProperties();
-        props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.debug", "true");
+    public void sendEmail(String receiver, String title, String body) throws Exception {
+        log.info("EMAIL SENDING: start.");
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.ssl.trust", "*");
+        properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
 
-        Session session = Session.getInstance(props, new Authenticator() {
+        Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(mailSender.getUsername(), mailSender.getPassword());
-            }
-        });
+                return new PasswordAuthentication(SENDER, SENDER_PASSWORD);
+            }};
 
-        Message message = prepareMessage(session,mailSender.getUsername(), recepient);
-        Transport.send(message);
+        Session session = Session.getInstance(properties,authenticator);
 
+        EmailMessage emailMessage = new EmailMessage();
+        emailMessage.setSession(session);
+        emailMessage.setSender(SENDER);
+        emailMessage.setReceiver(receiver);
+        emailMessage.setTitle(title);
+        emailMessage.setBody(body);
+
+        Message message = prepareMessage(emailMessage);
+        log.info("EMAIL SENDING: processing.");
+        if (message!=null) {
+            Transport.send(message);
+            log.info("EMAIL SENDING: done.");
+        } else{
+            log.info("EMAIL SENDING: error while transporting email. ");
+        }
     }
 
-    private static Message prepareMessage(Session session, String myAccountEmail, String recepient) {
+    private Message prepareMessage(EmailMessage emailMessage) {
         try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(myAccountEmail));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("Myfirst email from Java App");
-            message.setText("hey There, \n Look my email");
+            Message message = new MimeMessage(emailMessage.getSession());
+            message.setFrom(new InternetAddress(emailMessage.getSender()));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailMessage.getReceiver()));
+            message.setSubject(emailMessage.getTitle());
+            message.setText(emailMessage.getBody());
             return message;
         } catch (Exception ex) {
-            log.info("Jest error !!!");
+            log.info("EMAIL SENDING: error while 'prepareMessage'. ");
         }
         return null;
     }
-
-
-
-
 }
 
 
