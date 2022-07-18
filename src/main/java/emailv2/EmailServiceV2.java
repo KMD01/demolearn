@@ -15,11 +15,11 @@ import java.util.Properties;
 @Data // Lombok creates constructor, getters, setters
 public class EmailServiceV2 {
 
-    @Value("${sender}")
+    @Value("${mail.sender}")
     private String sender;
 
-    @Value("${senderPassword}")
-    private String senderPassword;
+    @Value("${mail.password}")
+    private String password;
 
     public void sendEmail(String receiver, String title, String body) throws Exception {
         log.info("EMAIL SENDING: start.");
@@ -29,13 +29,11 @@ public class EmailServiceV2 {
         } else{
             log.info("EMAIL SENDING: Sender is null.");
         }
-        if (senderPassword!=null){
+        if (password!=null){
             log.info("EMAIL SENDING: SenderPassword is not null.");
         } else{
             log.info("EMAIL SENDING: SenderPassword is null.");
         }
-
-
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -50,19 +48,19 @@ public class EmailServiceV2 {
         Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(sender, senderPassword);
+                return new PasswordAuthentication(sender, password);
             }};
 
         Session session = Session.getInstance(properties,authenticator);
 
-        EmailMessageV2 emailMessage = new EmailMessageV2();
-        emailMessage.setSession(session);
-        emailMessage.setSender(sender);
-        emailMessage.setReceiver(receiver);
-        emailMessage.setTitle(title);
-        emailMessage.setBody(body);
+        EmailBodyV2 emailBody = new EmailBodyV2();
+        emailBody.setSession(session);
+        emailBody.setSender(sender);
+        emailBody.setReceiver(receiver);
+        emailBody.setTitle(title);
+        emailBody.setBody(body);
 
-        Message message = prepareMessage(emailMessage);
+        Message message = prepareMessage(emailBody);
         log.info("EMAIL SENDING: processing.");
         if (message!=null) {
             Transport.send(message);
@@ -72,13 +70,13 @@ public class EmailServiceV2 {
         }
     }
 
-    private Message prepareMessage(EmailMessageV2 emailMessage) {
+    private Message prepareMessage(EmailBodyV2 emailBody) {
         try {
-            Message message = new MimeMessage(emailMessage.getSession());
-            message.setFrom(new InternetAddress(emailMessage.getSender()));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailMessage.getReceiver()));
-            message.setSubject(emailMessage.getTitle());
-            message.setText(emailMessage.getBody());
+            Message message = new MimeMessage(emailBody.getSession());
+            message.setFrom(new InternetAddress(emailBody.getSender()));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailBody.getReceiver()));
+            message.setSubject(emailBody.getTitle());
+            message.setText(emailBody.getBody());
             return message;
         } catch (Exception ex) {
             log.info("EMAIL SENDING: error while 'prepareMessage'. ");

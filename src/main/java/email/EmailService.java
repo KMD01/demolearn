@@ -30,14 +30,14 @@ public class EmailService {
 
         Session session = Session.getInstance(properties,authenticator);
 
-        EmailMessage emailMessage = new EmailMessage();
-        emailMessage.setSession(session);
-        emailMessage.setSender(SENDER);
-        emailMessage.setReceiver(receiver);
-        emailMessage.setTitle(title);
-        emailMessage.setBody(body);
+        EmailBody emailBody = new EmailBody();
+        emailBody.setSession(session);
+        emailBody.setSender(SENDER);
+        emailBody.setReceiver(receiver);
+        emailBody.setTitle(title);
+        emailBody.setBody(body);
 
-        Message message = prepareMessage(emailMessage);
+        Message message = prepareMessage(emailBody);
         log.info("EMAIL SENDING: processing.");
         if (message!=null) {
             Transport.send(message);
@@ -47,13 +47,13 @@ public class EmailService {
         }
     }
 
-    private Message prepareMessage(EmailMessage emailMessage) {
+    private Message prepareMessage(EmailBody emailBody) {
         try {
-            Message message = new MimeMessage(emailMessage.getSession());
-            message.setFrom(new InternetAddress(emailMessage.getSender()));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailMessage.getReceiver()));
-            message.setSubject(emailMessage.getTitle());
-            message.setText(emailMessage.getBody());
+            Message message = new MimeMessage(emailBody.getSession());
+            message.setFrom(new InternetAddress(emailBody.getSender()));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailBody.getReceiver()));
+            message.setSubject(emailBody.getTitle());
+            message.setText(emailBody.getBody());
             return message;
         } catch (Exception ex) {
             log.info("EMAIL SENDING: error while 'prepareMessage'. ");

@@ -7,7 +7,7 @@ import javax.mail.Session;
 
 @Data //Lombok creates constructor, getters, setter
 @Component
-public class EmailMessageV2 {
+public class EmailBodyV2 {
    private Session session;
    private String sender;
    private String receiver;
