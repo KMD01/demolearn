@@ -9,7 +9,7 @@ public class FileService {
         try {
             File file = new File("E:\\_projects\\demolearn\\src\\main\\resources" + fileName + ".txt");
         } catch (Exception e){
-            System.out.println("An error occured, while adding a file.");
+            System.out.println("An error occurred, while adding a file.");
         }
     }
 
@@ -22,7 +22,7 @@ public class FileService {
             fileWriter.close();
             System.out.println("Status: file created");
         } catch (IOException e){
-            System.out.println("An error occured, while adding a text.");
+            System.out.println("An error occurred, while adding a text.");
         }
     }
 
@@ -40,7 +40,7 @@ public class FileService {
             System.out.println("Status: " + "the text from " + file.getName() + " was read" );
             System.out.println("Text from the file: " + textPrint2);
         } catch(IOException e){
-            System.out.println("An error occured, while reading a text from file.");}
+            System.out.println("An error occurred, while reading a text from file.");}
     }
 
     public void deleteFile(String fileName){
