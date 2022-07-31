@@ -1,4 +1,4 @@
-package wordApache;
+package msOffice.wordApache;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xwpf.usermodel.*;

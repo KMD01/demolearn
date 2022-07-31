@@ -1,4 +1,4 @@
-package emailv2;
+package javaxMail.emailv2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

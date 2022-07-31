@@ -1,4 +1,4 @@
-package email;
+package javaxMail.email;
 
 import lombok.Data;
 import javax.mail.Session;

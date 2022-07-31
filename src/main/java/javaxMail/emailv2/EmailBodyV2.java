@@ -1,4 +1,4 @@
-package emailv2;
+package javaxMail.emailv2;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

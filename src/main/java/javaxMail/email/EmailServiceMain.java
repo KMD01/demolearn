@@ -1,4 +1,4 @@
-package email;
+package javaxMail.email;
 
 public class EmailServiceMain {
 

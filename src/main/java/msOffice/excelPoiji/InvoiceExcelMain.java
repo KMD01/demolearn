@@ -1,4 +1,4 @@
-package excelPoiji;
+package msOffice.excelPoiji;
 
 import com.poiji.bind.Poiji;
 
