@@ -5,19 +5,18 @@ import java.util.Scanner;
 
 public class FileService {
 
-    public void addFile(String fileName){
-        try {
-            File file = new File("E:\\_projects\\demolearn\\src\\main\\resources" + fileName + ".txt");
-        } catch (Exception e){
-            System.out.println("An error occurred, while adding a file.");
-        }
+    private final String PATH_NAME = "D:\\DEVELOPER\\_projects\\demolearn\\src\\main\\resources\\";
+
+    public FileWriter createFile(String fileName) throws IOException{
+            String filePath = PATH_NAME + fileName + ".txt";
+            File file = new File(filePath);
+            return new FileWriter(file);
     }
 
-    public void addText(String fileName, String text ){
+    public void addText(String fileName, String text, FileWriter fileWriter ){
         try {
-            String filePath = "E:\\_projects\\demolearn\\src\\main\\resources\\" + fileName + ".txt";
+            String filePath = PATH_NAME + fileName + ".txt";
             File file = new File(filePath);
-            FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(text);
             fileWriter.close();
             System.out.println("Status: file created");
@@ -28,23 +27,23 @@ public class FileService {
 
     public void readText(String fileName){
         try {
-            String filePath = "E:\\_projects\\demolearn\\src\\main\\resources\\" + fileName + ".txt";
+            String filePath = PATH_NAME + fileName + ".txt";
             File file = new File(filePath);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String textPrint2 = bufferedReader.readLine();
-
+            String textPrint1 = bufferedReader.readLine();
             Scanner scanner = new Scanner(file);
-
-            String textPrint = scanner.nextLine();
+            String textPrint2 = scanner.nextLine();
             System.out.println("Status: " + "the text from " + file.getName() + " was read" );
-            System.out.println("Text from the file: " + textPrint2);
+            System.out.println("Text from the file via BufferReader: " + textPrint1);
+            System.out.println("Text from the file via Scanner: " + textPrint2);
         } catch(IOException e){
-            System.out.println("An error occurred, while reading a text from file.");}
+            System.out.println("An error occurred, while reading a text from file.");
+        }
     }
 
     public void deleteFile(String fileName){
-        String filePath = "E:\\_projects\\demolearn\\src\\main\\resources\\" + fileName + ".txt";
+        String filePath = "D:\\DEVELOPER\\_projects\\demolearn\\src\\main\\resources\\" + fileName + ".txt";
         File file = new File(filePath);
         file.delete();
         System.out.println("Status: " + "the file "+ file.getName() + " was deleted");
