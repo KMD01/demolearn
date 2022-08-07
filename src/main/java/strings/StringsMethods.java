@@ -37,4 +37,13 @@ public class StringsMethods {
         List<String> uniqueNames = namesList.stream().distinct().toList();
         String allInOne2 = String.join(", ", namesList);
     }
+
+    public static void use5_substring(){
+        String name = "Krzysztof";
+        String newName = name.substring(1,name.length()-1);
+        System.out.println(name);
+        System.out.println(newName);
+    }
+
+
 }
