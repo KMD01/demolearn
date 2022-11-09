@@ -29,7 +29,7 @@ public class AnimalTest {
 
     @Test
     void givenEvenNumber_whenCheckingIsNumberEven_thenTrue() {
-        boolean result = this.animal.isNumberEven(8);
+        boolean result = this.animal.isAnimalAgeEven(8);
         assertTrue(result);
     }
 
@@ -45,9 +45,5 @@ public class AnimalTest {
 
         assertTrue(actualMessage.contains(expectedMessage));
     }
-
-
-
-
 
 }
