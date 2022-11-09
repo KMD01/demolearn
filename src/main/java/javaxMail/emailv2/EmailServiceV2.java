@@ -24,14 +24,14 @@ public class EmailServiceV2 {
     public void sendEmail(String receiver, String title, String body) throws Exception {
         log.info("EMAIL SENDING: start.");
 
-        if (sender!=null){
+        if (sender != null) {
             log.info("EMAIL SENDING: Sender is not null.");
-        } else{
+        } else {
             log.info("EMAIL SENDING: Sender is null.");
         }
-        if (password!=null){
+        if (password != null) {
             log.info("EMAIL SENDING: SenderPassword is not null.");
-        } else{
+        } else {
             log.info("EMAIL SENDING: SenderPassword is null.");
         }
 
@@ -42,16 +42,17 @@ public class EmailServiceV2 {
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.ssl.trust", "*");
         properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
-        properties.put("sender","mariusz.kowalski5000@gmail.com");
-        properties.put("senderPassword","shcmhqpukutgaulz");
+        properties.put("sender", "mariusz.kowalski5000@gmail.com");
+        properties.put("senderPassword", "shcmhqpukutgaulz");
 
         Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(sender, password);
-            }};
+            }
+        };
 
-        Session session = Session.getInstance(properties,authenticator);
+        Session session = Session.getInstance(properties, authenticator);
 
         EmailBodyV2 emailBody = new EmailBodyV2();
         emailBody.setSession(session);
@@ -62,10 +63,10 @@ public class EmailServiceV2 {
 
         Message message = prepareMessage(emailBody);
         log.info("EMAIL SENDING: processing.");
-        if (message!=null) {
+        if (message != null) {
             Transport.send(message);
             log.info("EMAIL SENDING: done.");
-        } else{
+        } else {
             log.info("EMAIL SENDING: error while transporting email. ");
         }
     }

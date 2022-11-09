@@ -12,7 +12,7 @@ public class FileServiceMain {
 
         FileService fileService = new FileService();
         FileWriter fw = fileService.createFile(name);
-        fileService.addText(name,text,fw);
+        fileService.addText(name, text, fw);
         fileService.readText(name);
         //fileTxtService.deleteFile(name);
 

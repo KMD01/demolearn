@@ -1,5 +1,4 @@
-package Lambda;
-
+package lambda;
 
 
 public class LambdaReview {

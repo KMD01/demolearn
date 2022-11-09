@@ -11,5 +11,5 @@ public class SetReview {
     // Create an empty list
     Set<String> newList = new HashSet<>();
     // Create a list
-    Set<String> namesList = Set.of("Kate","Anna","Joe","Brandon");
+    Set<String> namesList = Set.of("Kate", "Anna", "Joe", "Brandon");
 }

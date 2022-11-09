@@ -5,6 +5,7 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.xssf.usermodel.*;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Map;
@@ -21,12 +22,12 @@ public class ExcelService {
 
     private void buildHeader(XSSFSheet sheet) {
         XSSFRow row = sheet.getRow(0);
-        buildCells(row,1,blackCellStyle(sheet.getWorkbook()),"LP" );
-        buildCells(row,2,blackCellStyle(sheet.getWorkbook()),"NAME" );
-        buildCells(row,3,blackCellStyle(sheet.getWorkbook()),"DATE OF BIRTH" );
+        buildCells(row, 1, blackCellStyle(sheet.getWorkbook()), "LP");
+        buildCells(row, 2, blackCellStyle(sheet.getWorkbook()), "NAME");
+        buildCells(row, 3, blackCellStyle(sheet.getWorkbook()), "DATE OF BIRTH");
     }
 
-    private void buildCells(XSSFRow row, int columnIndex,  XSSFCellStyle cellStyle, String columnValue ) {
+    private void buildCells(XSSFRow row, int columnIndex, XSSFCellStyle cellStyle, String columnValue) {
         XSSFCell cell = row.createCell(columnIndex);
         cell.setCellStyle(cellStyle);
         cell.setCellValue(columnValue);
@@ -44,7 +45,7 @@ public class ExcelService {
         return cellStyle;
     }
 
-    private void buildBody(XSSFSheet sheet){
+    private void buildBody(XSSFSheet sheet) {
         // This data needs to be written (Object[])
         Map<String, Object[]> studentData = new TreeMap<String, Object[]>();
         //studentData.put("1", new Object[]{"LP", "NAME", "YEAR"});
@@ -68,12 +69,12 @@ public class ExcelService {
         }
     }
 
-    private void saveFile(XSSFWorkbook workbook){
-        try{
-            FileOutputStream out = new FileOutputStream( new File("E:/Family.xlsx"));
+    private void saveFile(XSSFWorkbook workbook) {
+        try {
+            FileOutputStream out = new FileOutputStream(new File("E:/Family.xlsx"));
             workbook.write(out);
-            out.close();}
-        catch (Exception e){
+            out.close();
+        } catch (Exception e) {
             System.out.println("Jest error!");
         }
     }

@@ -7,6 +7,6 @@ public class DurationMain {
         LocalDate date1 = LocalDate.now();
         LocalDate date2 = LocalDate.now().minusMonths(1).minusDays(10);
         DurationMethods duration = new DurationMethods();
-        duration.showDuration(date1,date2);
+        duration.showDuration(date1, date2);
     }
 }

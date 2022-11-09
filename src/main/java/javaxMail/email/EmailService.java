@@ -1,6 +1,7 @@
 package javaxMail.email;
 
 import lombok.extern.slf4j.Slf4j;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -26,9 +27,10 @@ public class EmailService {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(SENDER, SENDER_PASSWORD);
-            }};
+            }
+        };
 
-        Session session = Session.getInstance(properties,authenticator);
+        Session session = Session.getInstance(properties, authenticator);
 
         EmailBody emailBody = new EmailBody();
         emailBody.setSession(session);
@@ -39,10 +41,10 @@ public class EmailService {
 
         Message message = prepareMessage(emailBody);
         log.info("EMAIL SENDING: processing.");
-        if (message!=null) {
+        if (message != null) {
             Transport.send(message);
             log.info("EMAIL SENDING: done.");
-        } else{
+        } else {
             log.info("EMAIL SENDING: error while transporting email. ");
         }
     }

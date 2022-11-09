@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArrayTask {
-    public static int[] countPositivesSumNegatives(int[] input){
+    public static int[] countPositivesSumNegatives(int[] input) {
         int[] result = new int[2];
         List<Integer> negativeList = new ArrayList<>();
         List<Integer> positiveList = new ArrayList<>();
         for (int arrayElement : input) {
-            if (arrayElement  <= 0) {
+            if (arrayElement <= 0) {
                 negativeList.add(arrayElement);
             } else {
                 positiveList.add(arrayElement);

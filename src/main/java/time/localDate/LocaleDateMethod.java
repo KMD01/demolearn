@@ -14,8 +14,8 @@ public class LocaleDateMethod {
         LocalDate lastDayOfMonth = firstDayOfMonth.with(TemporalAdjusters.lastDayOfMonth());
     }
 
-    private void countTheNumberOfTheDays (LocalDate from,LocalDate to){
-        long amountOfDays = ChronoUnit.DAYS.between(from,to);
+    private void countTheNumberOfTheDays(LocalDate from, LocalDate to) {
+        long amountOfDays = ChronoUnit.DAYS.between(from, to);
     }
 
 }

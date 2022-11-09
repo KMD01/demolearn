@@ -8,7 +8,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.EventListener;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @ComponentScan
 public class EmailServiceMainV2 {
 
@@ -18,8 +18,9 @@ public class EmailServiceMainV2 {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(EmailServiceMainV2.class, args);
     }
+
     @EventListener(ApplicationReadyEvent.class)
     public void test() throws Exception {
-        emailService.sendEmail("dyk.krzysztof@gmail.com","JAVA APP: email via java 3", "HI,\r\n This is via Java application by Chris :D"  );
+        emailService.sendEmail("dyk.krzysztof@gmail.com", "JAVA APP: email via java 3", "HI,\r\n This is via Java application by Chris :D");
     }
 }

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class MapReview {
 
-    Map<String, String> namesMap = Map.of("Java","It is a programming language","SQL","It is a query language.","Scrum","It is a type of Agile methodology.");
+    Map<String, String> namesMap = Map.of("Java", "It is a programming language", "SQL", "It is a query language.", "Scrum", "It is a type of Agile methodology.");
 
     //Get the all values from map
     Collection<String> values = namesMap.values();
