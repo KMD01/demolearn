@@ -3,6 +3,7 @@ package strings;
 
 import java.security.SecureRandom;
 import java.util.List;
+import java.util.Locale;
 
 public class StringsMethods {
 
@@ -49,6 +50,15 @@ public class StringsMethods {
         final SecureRandom secureRandom = new SecureRandom();
         final int generated = secureRandom.nextInt(9999);
         final String otp = String.format("%06d", generated);
+    }
+
+    public static void use7_asii(){
+        String data = "Java";
+        int result = 0;
+        for (int x = 0; x < data.length(); x++) {
+            result += data.toLowerCase(Locale.ROOT).charAt(0);
+        }
+        System.out.println(result);
     }
 
 

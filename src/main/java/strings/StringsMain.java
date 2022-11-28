@@ -7,7 +7,7 @@ public class StringsMain {
 //        StringsMethods.use3_concat();
 //        StringsMethods.use4_join();
 //        StringsMethods.use5_substring();
-        StringsMethods.use6_format();
+        StringsMethods.use7_asii();
 
     }
 }
