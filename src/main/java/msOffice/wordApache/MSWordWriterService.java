@@ -9,7 +9,7 @@ import java.net.URISyntaxException;
 public class MSWordWriterService {
 
     public static String logo = "photo.jpeg";
-    public static String myText = "opis.txt";
+    public static String myText = "opis w dokumencie";
 
     public void createWord() throws IOException, URISyntaxException, InvalidFormatException {
         XWPFDocument document = new XWPFDocument();
@@ -32,9 +32,8 @@ public class MSWordWriterService {
     private void makeText(XWPFDocument document) throws FileNotFoundException {
         XWPFParagraph paragraphText = document.createParagraph();
         paragraphText.setAlignment(ParagraphAlignment.LEFT);
+
         XWPFRun paragraphTextRun = paragraphText.createRun();
-        FileReader fileReader = new FileReader("opis.txt");
-        String exportText = fileReader.toString();
         paragraphTextRun.setText(myText);
     }
 
@@ -42,6 +41,7 @@ public class MSWordWriterService {
         File file = new File("D:/newDocument.docx");
         file.delete();
         file.createNewFile();
+
         FileOutputStream out = new FileOutputStream(file);
         document.write(out);
         out.close();
