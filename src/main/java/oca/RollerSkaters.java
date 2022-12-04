@@ -9,7 +9,6 @@ public class RollerSkaters {
         RollerSkaters s = new RollerSkaters();
         int feet =4, tracks =15;
         System.out.println(feet + tracks + s.wheels);
-
     }
 
 }
