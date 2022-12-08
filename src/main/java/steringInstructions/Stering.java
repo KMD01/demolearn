@@ -2,8 +2,6 @@ package steringInstructions;
 
 public class Stering {
 
-    int number;
-
     public void printTheMonth(int number) {
         switch (number) {
             case 1 -> System.out.println("January");
@@ -20,6 +18,4 @@ public class Stering {
             case 12 -> System.out.println("December");
         }
     }
-
-
 }
