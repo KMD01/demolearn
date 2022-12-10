@@ -9,5 +9,4 @@ public class Marsupial {
     }
 }
 
-//    Marsupial walks on two legs: false
-//        Kangaroo hops on two legs: true
+

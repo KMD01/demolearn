@@ -8,3 +8,4 @@ class Marsupial {
         System.out.println("Marsupial walks on two legs: "+isBiped());
     }
 }
+

@@ -1,4 +1,4 @@
-package studyGuide.chapter5.example13;
+package studyGuide.chapter5.example13_hiding_static_methods;
 
 public class Panda extends Bear {
     public static void eat() {

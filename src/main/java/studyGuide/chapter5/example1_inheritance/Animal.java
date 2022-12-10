@@ -1,4 +1,4 @@
-package studyGuide.chapter5.example1;
+package studyGuide.chapter5.example1_inheritance;
 
 public class Animal {
     private int age;

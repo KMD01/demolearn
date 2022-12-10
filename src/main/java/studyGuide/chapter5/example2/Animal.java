@@ -5,5 +5,6 @@ public class Animal {
     public Animal(int age) {
         //super();
         this.age = age;
+        System.out.println("Animal constructor with 1 argument.");
     }
 }

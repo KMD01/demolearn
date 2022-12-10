@@ -1,4 +1,4 @@
-package studyGuide.chapter5.example20;
+package studyGuide.chapter5.example20_abstract;
 
 public abstract class Animal {
     protected int age;
