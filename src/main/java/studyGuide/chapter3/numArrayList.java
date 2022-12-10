@@ -1,6 +1,8 @@
 package studyGuide.chapter3;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class numArrayList {
 
@@ -15,6 +17,11 @@ public class numArrayList {
         System.out.println(list1);
         list1.set(1,"john");
         System.out.println(list1);
+        System.out.println(list1.contains(1));
+        System.out.println(list1.equals(null));
+        Collections.sort(list1);
+        System.out.println(list1);
+
 
         //      SECOND LIST:
         ArrayList<String> list2 = new ArrayList(10);
