@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example12;
 
 public class Rabbit {
 

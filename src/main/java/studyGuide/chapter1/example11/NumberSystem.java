@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example11;
 
 public class NumberSystem {
 

@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example1;
 
 import java.lang.System; // import lang
 import java.lang.*; // import lang

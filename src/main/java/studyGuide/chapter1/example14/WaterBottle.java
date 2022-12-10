@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example14;
 
 public class WaterBottle {
     private String brand;

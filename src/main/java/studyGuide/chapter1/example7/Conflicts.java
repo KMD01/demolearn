@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example7;
 import java.util.*;
 import java.sql.*;
 import java.util.Date;

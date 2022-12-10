@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example10;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

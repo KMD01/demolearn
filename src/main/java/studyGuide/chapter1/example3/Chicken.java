@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example3;
 
 public class Chicken {
     String name = "Joe";

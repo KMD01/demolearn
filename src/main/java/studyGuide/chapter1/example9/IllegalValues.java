@@ -1,4 +1,4 @@
-package studyGuide.chapter1;
+package studyGuide.chapter1.example9;
 
 public class IllegalValues {
     public static void main(String[] args) {
