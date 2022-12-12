@@ -1,4 +1,4 @@
-package studyGuide.chapter4_methods;
+package studyGuide.chapter4_methods.example9;
 
 public class Gorilla {
     public static int count;

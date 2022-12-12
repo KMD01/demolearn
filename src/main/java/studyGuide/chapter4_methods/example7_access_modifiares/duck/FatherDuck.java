@@ -1,4 +1,4 @@
-package studyGuide.chapter4_methods.duck;
+package studyGuide.chapter4_methods.example7_access_modifiares.duck;
 
 public class FatherDuck {
 

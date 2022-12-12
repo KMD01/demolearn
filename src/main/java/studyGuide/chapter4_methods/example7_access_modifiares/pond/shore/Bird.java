@@ -1,4 +1,4 @@
-package studyGuide.chapter4_methods.pond.shore;
+package studyGuide.chapter4_methods.example7_access_modifiares.pond.shore;
 
 public class Bird {
     protected String text = "floating";

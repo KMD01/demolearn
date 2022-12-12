@@ -1,7 +1,7 @@
-package studyGuide.chapter4_methods.pond;
+package studyGuide.chapter4_methods.example7_access_modifiares.pond;
 
 
-import studyGuide.chapter4_methods.duck.UncleDuck;
+import studyGuide.chapter4_methods.example7_access_modifiares.duck.UncleDuck;
 
 public class UncleDuckling extends UncleDuck {
     public void makeNoise() {

@@ -1,4 +1,4 @@
-package studyGuide.chapter4_methods;
+package studyGuide.chapter4_methods.example8_static_instance;
 
 public class StaticExample {
     private String name = "Static class";

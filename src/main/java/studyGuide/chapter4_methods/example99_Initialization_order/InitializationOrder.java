@@ -1,6 +1,7 @@
-package studyGuide.chapter4_methods;
+package studyGuide.chapter4_methods.example99_Initialization_order;
 
-public class InitializationOrderSimple {
+
+public class InitializationOrder {
     private String name = "Torchie";
 
     {
@@ -13,16 +14,18 @@ public class InitializationOrderSimple {
         System.out.println(COUNT);
     }
 
-    static {
-        COUNT += 10;
+    {
+        COUNT++;
         System.out.println(COUNT);
     }
 
-    public InitializationOrderSimple() {
+    public InitializationOrder() {
         System.out.println("constructor");
     }
 
     public static void main(String[] args) {
-        InitializationOrderSimple initializationOrderSimple = new InitializationOrderSimple();
+        System.out.println("read to construct");
+        new InitializationOrder();
     }
 }
+

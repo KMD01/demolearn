@@ -1,4 +1,4 @@
-package studyGuide.chapter4_methods;
+package studyGuide.chapter4_methods.example99_Initialization_order;
 
 public class YetMoreInitializationOrder {
 
