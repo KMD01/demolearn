@@ -26,3 +26,7 @@ public class InitializationOrderSimple {
         InitializationOrderSimple initializationOrderSimple = new InitializationOrderSimple();
     }
 }
+//0
+//10
+//Torchie
+//constructor

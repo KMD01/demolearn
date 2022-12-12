@@ -29,3 +29,9 @@ public class InitializationOrder {
     }
 }
 
+//0
+//read to construct
+//Torchie
+//1
+//constructor
+
