@@ -1,11 +1,11 @@
-package strings;
+package string;
 
 
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Locale;
 
-public class StringsMethods {
+public class StringMethods {
 
     public static void use1_strip() {
         String clearName = "Kris";
@@ -61,5 +61,33 @@ public class StringsMethods {
         System.out.println(result);
     }
 
+    public static void use8_replace(){
+        String name = "Krzysztof";
+        System.out.println(name);
+        String nameReplaced = name.replace("K","G");
+        System.out.println(nameReplaced);
+    }
+
+    public static void use9_reassign(){
+        String name = "Krzysztof";
+        name = "Anna";
+    }
+
+    public static void use10_equal(){
+        String a = "Krzysztof";
+        String b = "Krzysztof";
+        String c = null;
+        String d = new String(a);
+        String e = new String("Krzysztof");
+        System.out.println("a==b "+ (a==b));
+        System.out.println("a==c "+ (a==c));
+        System.out.println("a==d "+ (a==d));
+        System.out.println("a==e "+ (a==e));
+        System.out.println();
+        System.out.println("a.equals(b) "+ (a.equals(b)));
+        System.out.println("a.equals(c) "+ (a.equals(c)));
+        System.out.println("a.equals(d) "+ (a.equals(d)));
+        System.out.println("a.equals(e) "+ (a.equals(e)));
+    }
 
 }
