@@ -71,6 +71,7 @@ public class StringMethods {
     public static void use9_reassign(){
         String name = "Krzysztof";
         name = "Anna";
+        name = name+"krzysztof";
     }
 
     public static void use10_equal(){
@@ -89,5 +90,14 @@ public class StringMethods {
         System.out.println("a.equals(d) "+ (a.equals(d)));
         System.out.println("a.equals(e) "+ (a.equals(e)));
     }
+
+    public static void use11_name(){
+        int Integer = 0;
+        //Integer int = 0;
+    }
+
+
+
+
 
 }
