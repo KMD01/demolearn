@@ -8,5 +8,5 @@ public class WaterBottle {
         WaterBottle wb = new WaterBottle();
         System.out.print("Empty = " + wb.empty);
         System.out.print(", Brand = " + wb.brand);
-        }
+    }
 }

@@ -12,5 +12,5 @@ public class Rabbit {
         two = null;
         two = new Rabbit();
         System.gc();
-        }
+    }
 }
