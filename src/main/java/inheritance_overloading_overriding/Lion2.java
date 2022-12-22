@@ -6,8 +6,10 @@ public class Lion2 extends Animal {
         System.out.println("Lion2 is running");
     }
 
-    public void makeNoise(int number){
+    public int  makeNoise(int number){
         System.out.println("Lion2 makes noise - overloading");
+        return 10;
+
     }
 
 }
