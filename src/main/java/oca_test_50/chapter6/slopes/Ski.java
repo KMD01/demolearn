@@ -8,7 +8,7 @@ public class Ski {
     private static void slalom(Ski racer, int[] speed, String name) {
         racer.age = 19;
         name = "Wendy";
-        speed[0] = 11;
+        speed = new int[1];
         racer = null;
     }
 
@@ -16,9 +16,9 @@ public class Ski {
     public static void main(String[] args) {
         final Ski mySkier = new Ski();
         mySkier.age = 20;
-        System.out.println(mySkier.age);
+//        System.out.println(mySkier.age);
         final int[] mySpeed = new int[1];
-        final String myName = "Rossie";
+        String myName = "Rossie";
         slalom(mySkier, mySpeed, myName);
         System.out.println(mySkier.age);
         System.out.println(Arrays.toString(mySpeed));

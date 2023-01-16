@@ -1,7 +1,7 @@
 package oca_test_50.chapter7.theater;
 
 class Cinema {
-    /*private*/ String name;
+    /*private*/public String name;
 
     public Cinema() {
     }
