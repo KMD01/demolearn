@@ -24,5 +24,4 @@ public class Ski {
         System.out.println(Arrays.toString(mySpeed));
         System.out.println(myName);
     }
-
 }
