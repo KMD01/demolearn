@@ -1,4 +1,4 @@
-package optional;
+package wojtek.optional;
 
 
 import java.util.Optional;
