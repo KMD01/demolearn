@@ -1,4 +1,4 @@
-package wojtek.add_groups;
+package jit_wojtek.add_groups;
 
 import java.util.List;
 
