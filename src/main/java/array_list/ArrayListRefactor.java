@@ -1,12 +1,15 @@
 package array_list;
 
-public class ArrayList {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListRefactor {
     public static void main(String[] args) {
 
-        java.util.ArrayList<String> arrayList1 = new java.util.ArrayList();
+        ArrayList arrayList1 = new ArrayList();
         //arrayList1.remove(0);
-        java.util.ArrayList arrayList2  = new java.util.ArrayList<String>();
-        java.util.ArrayList<String> arrayList3  = new java.util.ArrayList<String>();
+        List<String> arrayList2  = new ArrayList<>();
+        List<String> arrayList3  = new ArrayList<>();
 
         arrayList1.add("Door1");
         arrayList1.add("Door2");

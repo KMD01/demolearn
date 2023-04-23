@@ -27,4 +27,13 @@ public class Player implements Comparable<Player> {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "ranking=" + ranking +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

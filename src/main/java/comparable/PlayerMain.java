@@ -15,7 +15,9 @@ public class PlayerMain {
         footballTeam.add(player2);
         footballTeam.add(player3);
 
-        System.out.println("Before Sorting : " + footballTeam);
+
+
+        System.out.println("Before Sorting : " + footballTeam.toString());
         Collections.sort(footballTeam);
         print(footballTeam);
     }
