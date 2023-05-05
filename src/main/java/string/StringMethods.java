@@ -1,6 +1,8 @@
 package string;
 
 
+import org.apache.logging.log4j.util.Strings;
+
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Locale;
@@ -94,6 +96,18 @@ public class StringMethods {
     public static void use11_name(){
         int Integer = 0;
         //Integer int = 0;
+    }
+
+    public static boolean isEmptyString1(String name){
+        return name ==null || name.length()==0;
+    }
+
+    public static boolean isEmptyString2(String name){
+        return name ==null || name.isEmpty();
+    }
+
+    public static boolean isNotEmpty(String name){
+        return name ==null || Strings.isNotEmpty(name);
     }
 
 
