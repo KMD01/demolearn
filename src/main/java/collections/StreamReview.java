@@ -3,6 +3,8 @@ package collections;
 import java.util.*;
 import java.util.stream.IntStream;
 
+import static java.util.stream.Collectors.groupingBy;
+
 public class StreamReview {
 
     public static void anyMatchElement(List<Integer> justList, int value) {
@@ -49,6 +51,11 @@ public class StreamReview {
         long integerRandomNumber = intStream.count();
         long number = intStream.count();
     }
+
+
+
+
+
 
 
 }
