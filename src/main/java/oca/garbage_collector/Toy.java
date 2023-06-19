@@ -1,4 +1,4 @@
-package garbage_collector;
+package oca.garbage_collector;
 
 public class Toy {
     public void play(){
