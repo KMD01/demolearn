@@ -19,6 +19,12 @@ public class StreamReview {
         System.out.println(sumValue);
     }
 
+    public static void sumOfElements(List<Integer> justList) {
+        //int sumValue =justList.stream().reduce(0,(total,element)->total+element);
+        int sumValue = justList.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sumValue);
+    }
+
     public static void maxElementByReduce(List<Integer> justList) {
         System.out.println(justList.iterator());
         int maxValue = justList.stream().reduce(0, Integer::max);
